@@ -6,6 +6,6 @@ class Show < ActiveRecord::Base
 
   def self.most_popular_show
     rating = Show.highest_rating
-    Show.where("rating = ?", rating)
+    Show.where("rating = ?", rating)[0]
   end
 end
