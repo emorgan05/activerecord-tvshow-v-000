@@ -8,4 +8,8 @@ class Show < ActiveRecord::Base
     rating = Show.highest_rating
     Show.where("rating = ?", rating)[0]
   end
+
+  def self.lowest_rating
+    Show.minimum(:rating)
+  end
 end
